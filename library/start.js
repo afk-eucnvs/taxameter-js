@@ -56,20 +56,20 @@ function start(taxameter) {
 
                 if (hastighed === 0) {
                     if (r < 0.2) {
-                        hastighed = 500;
+                        hastighed = 5;
                     }
-                } else if (r < 0.001) { // 10% for at møde et lyskryds
+                } else if (r < 0.1) { // 10% for at møde et lyskryds
                     hastighed = 0;
-                } else if (r < (0.899+(0.1-0.01))) { // 70% for speeder
+                } else if (r < 0.8) { // 70% for speeder
                     hastighed += Math.random() * 5;
                 } else { // 20% for brems
-                    hastighed *= 0.01;
+                    hastighed *= 0.7;
                 }
 
                 hastighed = Math.max(hastighed, 0);
-                hastighed = Math.min(hastighed, 800);
+                hastighed = Math.min(hastighed, 80);
 
-                taxameter.koer(hastighed/720);
+                taxameter.koer(hastighed/7200);
             }
         }, 500);
 
@@ -77,8 +77,7 @@ function start(taxameter) {
             if (taxameter.getStartetTidspunkt() === undefined) {
                 elementer.tid.innerText = '0:00';
             } else {
-                const tidGaaet = Math.floor((clock.now() - taxameter.turStartetTidspunkt) / 1000);
-
+                const tidGaaet = Math.floor((new Date() - taxameter.getStartetTidspunkt()) / 1000);
                 const sekunder = ("00" + tidGaaet % 60).slice(-2);
                 const minutter = Math.floor(tidGaaet / 60);
                 elementer.tid.innerText = minutter + ":" + sekunder;

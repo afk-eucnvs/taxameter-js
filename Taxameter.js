@@ -14,52 +14,29 @@
  *   bilen har kørt siden sidste beregning. 
  * - beregnPris(): skal returnere prisen beregnet udfra taxaselskabets prissætning
  */
-var price;
-
 class Taxameter {
 
-    constructor(clock, kmPris, sPris, minutPris, minimumspris,rounding) {
-        this.clock = clock;
+    constructor() {
         this.afstand = 0;
         this.turStartetTidspunkt = undefined;
-        this.kmPris = kmPris;
-        this.sPris = sPris;
-        this.minutPris = minutPris;
-        this.minimumspris = minimumspris;
-        this.rounding=rounding;
     }
-    
 
     getStartetTidspunkt() {
         return this.turStartetTidspunkt;
     }
 
     startTur() {
-        this.turStartetTidspunkt = this.clock.now();
+        this.turStartetTidspunkt = new Date();
     }
 
     slutTur() {
-        this.turStartetTidspunkt = undefined;
-        this.turSluttetTidspunkt = undefined;
-        this.afstand = 0;
 
     }
 
     koer(delta_afst) {
-        this.afstand += delta_afst;
     }
 
-
-
     beregnPris() {
-        if(this.rounding == true){
-            price = ((Math.round(this.afstand)+1) * (this.kmPris) + this.sPris + ((clock.now() - this.turStartetTidspunkt) * this.minutPris) / 600)
-        } else price = (this.afstand+1 * (this.kmPris) + this.sPris + ((clock.now() - this.turStartetTidspunkt) * this.minutPris) / 600)
-
-        if (this.turStartetTidspunkt === undefined)
-            return 0;
-        else if(price < this.minimumspris) return this.minimumspris
-        else return (price)
-      
+        return 0;
     }
 }
