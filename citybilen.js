@@ -24,16 +24,10 @@ forward(minutter){
 };
 var clock = new realClock();
 
-minimumspris = 0;
-kmPris = 8.5;
+minimumsPris = 75;
+kmPris = 4.5;
 sPris = 39;
-minutPris = 6.25;
-rounding = false;
+minutPris = 8.5;
+rounding = true;
 
-start(new Taxameter(
-    clock, 
-    kmPris, 
-    sPris, 
-    minutPris, 
-    minimumspris, 
-    rounding));
+start(new Taxameter(clock, kmPris, sPris, minutPris, minimumsPris, rounding));

@@ -1,30 +1,23 @@
 # Taxameter.js
 ## En opgave i Strategy Pattern
 
-### Opgave 1
-KroneTaxa skal have udviklet et nyt stykke software til at beregne prisen på en taxa tur, og har bedt dig om hjælp. De har allerede et gammelt system til at vise data'en og interagere med systemet - altså skal de bare have hjælp til en lille del af systemet.
+Lavede praktisk talt en copy paste af parkinglot.js, ændrede bare navne mm.
 
-Deres prismodel er rimelig simpel: 8,50 kr/km + 6,25 kr/min + 39 kr
+Den mest interasante variabel mener jeg selv er "rounding" den er der fordi det kun er "citybilen" der vil have at det er pr påbegyndt kilometer man skal tælle.
 
-Implementér (dvs. færdiggør, udfyld de tomme funktioner) klassen Taxameter.js, herunder KroneTaxas prismodel.
-
-### Opgave 2
-KroneTaxa vil også gerne bruge systemet til deres store vogne. Her er prisen: 12 kr/km + 6,67 kr/min + 69 kr.
-
-Lav filerne krone-taxa-stor-vogn.js og krone-taxa-stor-vogn.html, og lav Taxameter.js om så den kan genbruges til både normale og store vogne. (Hint: Strategy Pattern. )
-
-
-### Opgave 3
-KroneTaxas konkurrent CityBilen vil gerne købe dit system. De bruger samme brugergrænseflade, så det er lige til at sætte i deres biler. Dog er deres priser en smule anderledes: 4,50 kr pr. påbegyndt km + 7 kr pr. minut, og der er en minimumspris på 75 kr.
-
-Lav filerne city-bilen.js og city-bilen.html, og lav Taxameter.js om så den kan genbruges til alle 3 systemer.
-
+Grunden til at dette er et strategy pattern, som jeg har forstået det, er fordi at taxameter er det eneste dokument som der er delt med kunden.
 
 ### Opgave 4
 KroneTaxas vil gerne være mere konkurrencedygtige på korte ture med normale vogn, og vil gerne ændre deres km pris til:
 5 kr for den første km, derefter 9 kr/km.
 
 Lav de nødvendige ændringer i krone-taxa.js
+
+Kunne ikke finde en måde hvorpå jeg med ændringer ekslusivt til "kronetaxa.js" kunne løse denne problematik.
+
+Kunne godt lægge 2 nye variable ind i js filerne 
+"billige kilometer, og pris på billige kilometer", men kan ikke se en måde hvorpå jeg med ændringer kun til kronetaxa.js kan løse dette
+
 
 
 ### Bonus opgave 1 (overkommelig)
