@@ -25,9 +25,9 @@ forward(minutter){
 var clock = new realClock();
 
 minimumspris = 0;
-kmPris = 8.5;
-sPris = 39;
-minutPris = 6.25;
+kmPris = 12;
+sPris = 69;
+minutPris = 6.67;
 rounding = false;
 
 start(new Taxameter(
